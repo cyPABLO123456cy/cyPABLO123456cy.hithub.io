@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="赢尘">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="摘要 组活动在社交媒体上非常得活跃，组推荐得目的是为了能够给目标组推荐一个感兴趣的列表。现有的深度学习方法关注于单一的用户与组交互。这会导致非常大的数据稀疏性。应该还有别的交互方式来丰富组表示，比如说组与项目的交互。 这种发生在群体范围内的互动，形成了对某一群体的局部看法。群体表征可以根据群体之间的相似性进行，从而形成对某一群体的全局看法。在文章中提出来的基于注意力机制的方法激活且丰富了用户与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一种新的基于注意力的全局和局部信息融合神经网络的群体推荐">
+<meta property="og:url" content="http://example.com/2022/07/30/%E4%B8%80%E7%A7%8D%E6%96%B0%E7%9A%84%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%85%A8%E5%B1%80%E5%92%8C%E5%B1%80%E9%83%A8%E4%BF%A1%E6%81%AF%E8%9E%8D%E5%90%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BE%A4%E4%BD%93%E6%8E%A8%E8%8D%90/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要 组活动在社交媒体上非常得活跃，组推荐得目的是为了能够给目标组推荐一个感兴趣的列表。现有的深度学习方法关注于单一的用户与组交互。这会导致非常大的数据稀疏性。应该还有别的交互方式来丰富组表示，比如说组与项目的交互。 这种发生在群体范围内的互动，形成了对某一群体的局部看法。群体表征可以根据群体之间的相似性进行，从而形成对某一群体的全局看法。在文章中提出来的基于注意力机制的方法激活且丰富了用户与">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/bg/GLIF.png">
+<meta property="article:published_time" content="2022-07-30T11:34:46.000Z">
+<meta property="article:modified_time" content="2022-08-01T05:06:06.063Z">
+<meta property="article:author" content="赢尘">
+<meta property="article:tag" content="Group Recommendation attention mechanism">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/bg/GLIF.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>一种新的基于注意力的全局和局部信息融合神经网络的群体推荐 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 90vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>赢尘</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont codeicon-code"></i>
+                <span>leetcode</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/arrays/">
+                    
+                    <span>数组</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>存档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于我</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/tk.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="一种新的基于注意力的全局和局部信息融合神经网络的群体推荐"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-30 19:34" pubdate>
+          July 30, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">一种新的基于注意力的全局和局部信息融合神经网络的群体推荐</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    Last updated on 7 months ago
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="摘要">摘要</h3>
+<p>组活动在社交媒体上非常得活跃，组推荐得目的是为了能够给目标组推荐一个感兴趣的列表。现有的深度学习方法关注于单一的用户与组交互。这会导致非常大的数据稀疏性。应该还有别的交互方式来丰富组表示，比如说组与项目的交互。
+这种发生在群体范围内的互动，形成了对某一群体的局部看法。群体表征可以根据群体之间的相似性进行，从而形成对某一群体的全局看法。在文章中提出来的基于注意力机制的方法激活且丰富了用户与群组，群组与项目之间的交互，并且形成了群体的局部表示。然后再利用ANN获得组与组之间的相似度，进而获得全局表示。然后attention机制会将群内本地特征与各个群组特征进行融合，进而形成群组的综合特征。最后再神经协同过滤的框架（NCF）下进行训练。</p>
+<h3 id="介绍">介绍</h3>
+<!-- 介绍了组推荐的发展历程，经历哪些阶段，采用了哪些思想 -->
+传统的群组推荐系统是利用用户显式的个人信息来生成群组的信息。但是这种方法并未考虑到群组内成员的偏好的不同。然后就有一些工作来对群组决策进行建模，通过考虑组内用户偏好与显式特征建模。最近出现了一些采用深度学习的方法对固有信息进行建模。由于组-项目的交互数据的稀疏性，组-项目的表示变得很重要，因为有一些研究人员对组内成员偏好建模，然后采用动态权重信息获取组偏好。这些方法在有丰富的交互数据以及稳定的成员前提下表现得很好，但是在数据极度稀疏得情况下并没有很好得效果。为了增强组特征，研究人员利用项目-用户交互与用户-组交互来表征一个组内得所有成员。通过聚合成员间得特征来传递item的特征，用最后得到的item特征来作为组特征。
+<hr/>
+<!-- 现有的工作有哪些挑战 -->
+<p>基于深度学习的模型在做组推荐的时候仍然面临着三个问题：</p>
+<ol type="1">
+<li>有着许多丰富的交互数据，但是并没有将其利用起来。其交互数据有三种分别是：用户-项目交互、用户-组交互、组-项目交互。
+<ul>
+<li>没有将其交互数据彻底利用起来</li>
+<li>这种将间接的交互数据聚合起来时，会造成特征损失，当在特征传播时。
+如图所示： <img src="/img/md/grouprec/interaction.jpg" srcset="/img/loading.gif" lazyload
+alt="didi" /></li>
+<li>因此我们思考要如何充分的利用这些交互信息。</li>
+</ul></li>
+<li>考虑在深度学习框架下如何充分利用组与组之间的相似性来增强组表征，将组当作是一个虚拟用户。</li>
+<li>不同的特征对于组表征是不一样的。假如有一个长期稳定的话题，则在特征选取的时候就会选择一个与主题相近的特征，当是由朋友组成的群组中，则更会偏重于组内成员偏好。但是现有的级联操作和均值运算并不能很好的模拟这种影响。不同类型之间的特征存在着相互影响。并且将其平等看待。挑战在于根据不同种类特征的影响来对不同的交互数据进行融合以达到组推荐的目的。
+<!-- 基于上述的动机，于是作者自己提出的框架，该框架有哪些部分组成，每个部分分别是干什么的 -->
+作者在文中提出了GLIF，通过融合全局的组与组内的特征信息来表示组特征。主要是分为两个方面，其一是，在捕获全局信息时，通过捕获组与组之间的共享信息来表示组特征。简言之就是，组偏好之间共性如何捕捉。其二是，在捕获组内特征时，是通过对组内交互数据建模，比如对组-Item、组-user交互数据建模。这种方法简言之，就是组内决策如何做。要不要考虑组内之间的影响。具体如下：</li>
+</ol>
+<ul>
+<li>利用ANN捕捉三种不同的交互数据以达到最大化利用，以达到组内特征表示</li>
+<li>利用捕捉组与组之间的共同偏好，以达到全局的全局组表示</li>
+<li>由于相似组对目标组影响力的不同，采用ANN来聚合相似组。</li>
+<li>最后再采用ANN对全局和本地来进行深度融合
+该方法在三个真实数据集上得到了实现
+<hr/>
+<!-- 陈述了自己所做的贡献以及本文的每一节的脉络 -->
+该文章的贡献：</li>
+</ul>
+<ol type="1">
+<li>挖掘全局信息的工作</li>
+<li>交互数据全都被整合到了一起学习，通过不同视角来学习item与group的嵌入，再用ANN来学习各个视角下的动态权重。</li>
+<li>提出利用attention机制来聚合组内特征和组间特征的框架。</li>
+<li>在HR(点击率)和NDCG(归一化后折损累计)达到了比较好的效果。
+<!-- 自己的工作属于现有工作的哪个类别。将不同类别工作的发展一一交代或者罗列出来 --></li>
+</ol>
+<h3 id="相关工作">相关工作</h3>
+<p>现有的工作一般有两条路，分别是基于内存的方法和基于模型的方法</p>
+<ol type="1">
+<li>基于内存的方法</li>
+</ol>
+<ul>
+<li>这种方式是采用显式聚合用户偏好和用户分数。
+<ul>
+<li>由此就有了评分函数。它将单个模型生成的用户评分聚集起来形成组评分。而这些聚合方法有采用平均聚合、最少痛苦聚合以及最大满意度聚合。这些方式研究表明，并不都是最好的。基于早先的工作，那么就提出在聚合用户评分时把用户的影响力考虑进去。例如，GroupSA提出了一个社会关注网络，该网络考虑了社会影响和动态权重调整，对一个群体的投票方案进行建模，然后为成员分配权重，得到群体推荐的最终得分。</li>
+<li>组偏好，将显式用户偏好聚合形成虚拟组偏好。将这个组就虚拟为了一个用户，利用个性化推荐的方式来生成group
+item。有研究人员做group
+agent来表示的。目的是为了聚合用户偏好。还有一种是利用相对节点重要性来捕捉节点中哪些节点的关系更接近来表示总的组表示。</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>基于模型的方法-利用交互关系来做组推荐</li>
+</ol>
+<ul>
+<li>组决策往往是由最有影响力那个来做决定的。于是研究人员就提出了一个共识模型，该模型考虑通过用户的影响力与组行为来模拟群体活动的决策过程。就是通过用户影响力来对组决策进行建模。</li>
+<li>随着注意力机制的广泛应用，基于注意力机制的组决策模型中，用户的影响是由特定的组或项动态决定的。研究人员首先用ANN动态的学习组内成员的相对重要性，考虑组-用户交互数据，用组成员偏好来表示组偏好。
+用次注意神经网络对组中的用户-用户交互进行建模，然后利用剩余的成员来代表用户的偏好。还有的研究人员从多个视角采用注意力机制融合用户、项目、组的多个特征。第一步，先利用user-item交互分别得到用户表征和物品表征，第二步，利用group-user交互来获取group
+表征，最后在NCF框架下采用注意力机制聚合用户表征以或者组表征并且优化它。还有的研究人员利用朋友偏好在社交网络中构建超边以获得组间相似性并用于推荐。</li>
+</ul>
+<!-- 讲述自己的方法与上述方法有哪些不同点 -->
+<ol type="1">
+<li>充分利用了三种类型的交互关系</li>
+<li>提出了局部与全局注意力的概念</li>
+<li>**</li>
+</ol>
+<h3 id="问题定义">问题定义</h3>
+<p>介绍两种类型的ANN，分别是 type-based ANN and k types-based ANN。</p>
+<h4 id="符号与定义">符号与定义</h4>
+<p>该论文中<span class="math inline">\(\mathbf{X}\)</span>
+大写且加黑代表矩阵，<span
+class="math inline">\(X\)</span>大写不加黑代表集合 ，<span
+class="math inline">\(\mathbf{x}\)</span> 小写加黑代表向量 <span
+class="math inline">\(x\)</span> 小写不加黑代表常量。<br> <span
+class="math inline">\(U = \left\{u_{1}, u_{2}, \cdots,
+u_{n}\right\}\)</span>, $ V={v_{1}, v_{2}, , v_{m}} $, $ G={g_{1},
+g_{2}, , g_{s}} $分别代表用户集合、项目集合、组集合。<br> 目标组 <span
+class="math inline">\(g_{l}\)</span>,其中组用户是 <span
+class="math inline">\(U\)</span>
+里面的用户组成。有三种不同的交互，分别是项目-用户交互、用户-组交互、组-项目交互。<br>
+其中项目-用户交互成立是：一个项目被用户选择或者是评分称为一个交互。用户-项目指的是用户属于一个组中。项目-组交互是指该组对项目有操作的历史纪录。<br>
+在文中 <span class="math inline">\(\boldsymbol{A}=\left[a_{l
+i}\right]_{s \times m}\)</span> 代表着组-项目交互矩阵, <span
+class="math inline">\(\boldsymbol{B}=\left[b_{i j}\right]_{m \times
+n}\)</span> 代表着用户-项目交互矩阵。<br> <span
+class="math inline">\(\boldsymbol{C} =\left[c_{l j}\right]_{s \times
+n}\)</span>
+代表组-用户交互矩阵。而组推荐问题被定义为为组中用户推荐一系列项目清单。于是就可以用公式形式化的定义为：
+<span class="math display">\[
+   \text { Input: } U, V, G, \boldsymbol{A}, \boldsymbol{B},
+\boldsymbol{C}
+\]</span> <span class="math display">\[
+   \text { Output: } f: V \rightarrow \mathbf{R}
+\]</span></p>
+<h4 id="定义">定义</h4>
+<ol type="1">
+<li>Definition1 : Inhert Emdedding</li>
+</ol>
+<ul>
+<li>固有嵌入是自带的而且是可学习的参数，它能够反应潜在的用户或组的兴趣。嵌入的初始化采用的是Xavier
+strategy策略。</li>
+</ul>
+<ol start="2" type="1">
+<li>Definition2 : <span class="math inline">\(\left.(\gamma \text
+{-neighbor set })\left(N_{g_{l}}^{\gamma}\right)\right)\)</span></li>
+</ol>
+<ul>
+<li>代表与目标组相似的top个组。第一步，计算目标组与其他组的相似性。第二步，对其余组相似性评分排序。最后根据排序序列得到与目标组相近的邻居组集合被标记为$
+N_{g_{l}}^{} $, $ $是一个超参数，控制着目标组的邻居节点数量。</li>
+</ul>
+<ol start="3" type="1">
+<li>Definition3 global information:</li>
+</ol>
+<ul>
+<li>高度相似的群体具有相同的品味。相似度高的群体具有全局信息。由此全局信息被形式化定义为：
+<span class="math display">\[
+\left\{g_{l, k} \mid g_{l, k} \in\right.\left.N_{g_{l}}^{\gamma} ; g_{l,
+k} \in G\right\}
+\]</span></li>
+</ul>
+<ol start="4" type="1">
+<li>Definition4 local infomation:</li>
+</ol>
+<ul>
+<li>表示的是组内成员的交互信息。组内的每个用户与组的交互和每个项目与组的交互被称为本地信息。<br></li>
+</ul>
+<p>组内用户-组交互： <span class="math display">\[
+u_{j} \in I_{u}\left(g_{l}\right)
+\]</span> 组内项目-组交互： <span class="math display">\[
+v_{i} \in I_{v}\left(g_{l}\right)
+\]</span></p>
+<h4 id="attention模块">attention模块</h4>
+<h3 id="方法">方法</h3>
+<h3 id="实验">实验</h3>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/GroupRec/" class="category-chain-item">GroupRec</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/GroupRec/group-fusion/" class="category-chain-item">group fusion</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Group-Recommendation-attention-mechanism/">#Group Recommendation attention mechanism</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>一种新的基于注意力的全局和局部信息融合神经网络的群体推荐</div>
+      <div>http://example.com/2022/07/30/一种新的基于注意力的全局和局部信息融合神经网络的群体推荐/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>赢尘</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 30, 2022</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>August 1, 2022</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/08/17/%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-leetcode703/" title="数组的二分查找-leetcode703">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数组的二分查找-leetcode703</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/30/NBFNet-%E4%B8%80%E7%A7%8D%E9%80%9A%E7%94%A8%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E9%93%BE%E6%8E%A5%E9%A2%84%E6%B5%8B%E6%A1%86%E6%9E%B6/" title="NBFNet:一种通用的神经网络链接预测框架">
+                        <span class="hidden-mobile">NBFNet:一种通用的神经网络链接预测框架</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
