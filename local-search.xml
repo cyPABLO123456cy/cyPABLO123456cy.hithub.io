@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>860. 柠檬水找零</title>
+    <link href="/2023/02/22/860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6/"/>
+    <url>/2023/02/22/860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接">[链接🚀]</h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/860.png" alt="860" /><figcaption aria-hidden="true">860</figcaption></figure><h3 id="题解">题解</h3><p>具体见代码注释</p><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-comment">//对账单中的元素进行标记，手动模拟</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">lemonadeChange</span><span class="hljs-params">(<span class="hljs-type">int</span>[] bills)</span> &#123;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">five</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ten</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> bill : bills) &#123;<br>            <span class="hljs-comment">// 情况一：来的账单是等于5的</span><br>            <span class="hljs-keyword">if</span> (bill == <span class="hljs-number">5</span>) &#123;<br>                five++;<br>            &#125;<br>            <span class="hljs-comment">// 情况二：来的账单是等于10的 1. 先判断five的个数 若小于0 直接返回 否则就five-- ， ten++;</span><br>            <span class="hljs-keyword">if</span> (bill == <span class="hljs-number">10</span>) &#123;<br>                <span class="hljs-keyword">if</span> (five &lt;= <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125;<br>                five--;<br>                ten++;<br>            &#125;<br>            <span class="hljs-comment">// 情况三：来的账单是等于20的 1. 优先消耗掉10和5 于是先判断 ten和five的是否大于0若是 则将five和ten的值--</span><br>            <span class="hljs-comment">// 否则判断five的值是否大于等于3 成立的话就将five减3 否则返回false;</span><br>            <span class="hljs-keyword">if</span> (bill == <span class="hljs-number">20</span>) &#123;<br>                <span class="hljs-keyword">if</span> (five &gt; <span class="hljs-number">0</span> &amp;&amp; ten &gt; <span class="hljs-number">0</span>) &#123;<br>                    five--;<br>                    ten--;<br>                &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (five &gt;= <span class="hljs-number">3</span>) &#123;<br>                    five -=<span class="hljs-number">3</span>;<br>                &#125;<span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>贪心法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>快速排序</title>
     <link href="/2023/02/22/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     <url>/2023/02/22/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</url>
