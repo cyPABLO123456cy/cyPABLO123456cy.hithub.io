@@ -4,6 +4,69 @@
   
   
   <entry>
+    <title>435.无重叠区间</title>
+    <link href="/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/"/>
+    <url>/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接">[链接🚀]</h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/435.png" alt="435" /><figcaption aria-hidden="true">435</figcaption></figure><h3 id="题解">题解</h3><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">eraseOverlapIntervals</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals)</span> &#123;<br>      <span class="hljs-comment">//按照右边界排序</span><br>        Arrays.sort(intervals , (a , b) -&gt; Integer.compare(a[<span class="hljs-number">0</span>] , b[<span class="hljs-number">0</span>]));<br>        <br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; intervals.length; i++) &#123;<br>            <span class="hljs-comment">//判断是否为重叠区间 如果是重叠区间则continue,否则就count++</span><br>            <span class="hljs-keyword">if</span> (intervals[i][<span class="hljs-number">0</span>] &lt; intervals[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) &#123;<br>                <span class="hljs-comment">//重叠了则更新最右边界</span><br>                intervals[i][<span class="hljs-number">1</span>] = Math.min(intervals[i][<span class="hljs-number">1</span>] , intervals[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]);<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                count++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> intervals.length - count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>贪心法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>452. 用最少数量的箭引爆气球</title>
+    <link href="/2023/02/23/452-%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E7%9A%84%E7%AE%AD%E5%BC%95%E7%88%86%E6%B0%94%E7%90%83/"/>
+    <url>/2023/02/23/452-%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E7%9A%84%E7%AE%AD%E5%BC%95%E7%88%86%E6%B0%94%E7%90%83/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接">[链接🚀]</h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/452.png" alt="452" /><figcaption aria-hidden="true">452</figcaption></figure><h3 id="题解">题解</h3><p>利用sort排序后的序列，模拟出是否有重叠的情况如果无重叠count加1.如果重叠，则将最小值更新最右边界</p><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findMinArrowShots</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] points)</span> &#123;<br>        <span class="hljs-comment">//首先利用Jdk自带的方法排序</span><br>        Arrays.sort(points , (a , b) -&gt; Integer.compare(a[<span class="hljs-number">0</span>] , b[<span class="hljs-number">0</span>]));<br><br>        <span class="hljs-comment">//模拟过程</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; points.length; i++) &#123;<br>            <span class="hljs-comment">//用前一个区间的最右元素和后一个区间的最左元素比较判断是否重叠，</span><br>            <span class="hljs-keyword">if</span> (points[i][<span class="hljs-number">0</span>] &gt; points[i -<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) &#123;<br>                count++;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//更新重叠区间的最小右边界</span><br>                points[i][<span class="hljs-number">1</span>] = Math.min(points[i][<span class="hljs-number">1</span>] , points[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>贪心法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>406. 根据身高重建队列</title>
+    <link href="/2023/02/23/406-%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E9%87%8D%E5%BB%BA%E9%98%9F%E5%88%97/"/>
+    <url>/2023/02/23/406-%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E9%87%8D%E5%BB%BA%E9%98%9F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接">[链接🚀]</h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/406.png" alt="406" /><figcaption aria-hidden="true">406</figcaption></figure><h3 id="题解">题解</h3><p>先按照身高排序，然后再按照ki来排序，这个排序的采用Array.sort函数来排序</p><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.cy;<br><br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.LinkedList;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> 陈银</span><br><span class="hljs-comment"> * @$&#123;DAY_NAME_FULL&#125;</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@package</span> org.cy</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span> $&#123;DATE&#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><br>        <span class="hljs-type">int</span> array[][]  = &#123;&#123;<span class="hljs-number">7</span>,<span class="hljs-number">0</span>&#125;,&#123;<span class="hljs-number">4</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">7</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">0</span>&#125;,&#123;<span class="hljs-number">6</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">2</span>&#125;&#125;;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] data : reconstructQueue(array)) &#123;<br>            System.out.println(Arrays.toString(data));<br>        &#125;<br><br>        System.out.println(<span class="hljs-string">&quot;Hello world!&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[][] reconstructQueue(<span class="hljs-type">int</span>[][] people) &#123;<br>        Arrays.sort(people , (a , b) -&gt;&#123;<br>            <span class="hljs-keyword">if</span> (a[<span class="hljs-number">0</span>] == b[<span class="hljs-number">0</span>]) &#123;<br>                <span class="hljs-keyword">return</span> a[<span class="hljs-number">1</span>] - b[<span class="hljs-number">1</span>];<br>            &#125;<br>            <span class="hljs-keyword">return</span> b[<span class="hljs-number">0</span>] - a[<span class="hljs-number">0</span>];<br>        &#125;);<br><br>        LinkedList&lt;<span class="hljs-type">int</span>[]&gt; que = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] p : people) &#123;<br>            que.add(p[<span class="hljs-number">1</span>] , p);<br>        &#125;<br>        <span class="hljs-keyword">return</span> que.toArray(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[people.length][]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>贪心法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>860. 柠檬水找零</title>
     <link href="/2023/02/22/860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6/"/>
     <url>/2023/02/22/860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6/</url>
