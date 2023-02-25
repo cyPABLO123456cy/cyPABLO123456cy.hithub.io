@@ -16,16 +16,16 @@
   <meta name="author" content="赢尘">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[链接🚀] 题目   763  题解 代码 12345678910111213141516171819202122232425262728class Solution &amp;#123;    public List&lt;Integer&gt; partitionLabels(String s) &amp;#123;                int[] edge &#x3D; new int[2">
+    <meta name="description" content="本系列参考王喆老师深度学习这本书构建自己的学习笔记。参考RoleRec基于Pytorch实现的相关推荐和CTR算法； 本小节将记录协调过滤算法，介绍它的目标场景、基本思想、相似度计算方式、基于User的协同过滤（UserCF）、基于Item的协同过滤(ItemCF)、以及UserCF和ItemCF的优缺点对比等等； 目标场景 基本思想 相似度计算方式 基于User的协同过滤（UserCF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="763. 划分字母区间">
-<meta property="og:url" content="http://example.com/2023/02/25/763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/index.html">
+<meta property="og:title" content="CF-协同过滤">
+<meta property="og:url" content="http://example.com/2023/02/25/CF-%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[链接🚀] 题目   763  题解 代码 12345678910111213141516171819202122232425262728class Solution &amp;#123;    public List&lt;Integer&gt; partitionLabels(String s) &amp;#123;                int[] edge &#x3D; new int[2">
+<meta property="og:description" content="本系列参考王喆老师深度学习这本书构建自己的学习笔记。参考RoleRec基于Pytorch实现的相关推荐和CTR算法； 本小节将记录协调过滤算法，介绍它的目标场景、基本思想、相似度计算方式、基于User的协同过滤（UserCF）、基于Item的协同过滤(ItemCF)、以及UserCF和ItemCF的优缺点对比等等； 目标场景 基本思想 相似度计算方式 基于User的协同过滤（UserCF">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/bg/leetcode.png">
-<meta property="article:published_time" content="2023-02-25T05:53:34.000Z">
-<meta property="article:modified_time" content="2023-02-25T06:24:17.360Z">
+<meta property="article:published_time" content="2023-02-25T06:21:58.000Z">
+<meta property="article:modified_time" content="2023-02-25T06:22:38.495Z">
 <meta property="article:author" content="赢尘">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>763. 划分字母区间 - Hexo</title>
+  <title>CF-协同过滤 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="763. 划分字母区间"></span>
+            <span id="subtitle" data-typed-text="CF-协同过滤"></span>
           
         </div>
 
@@ -235,7 +235,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-25 13:53" pubdate>
+        <time datetime="2023-02-25 14:21" pubdate>
           February 25, 2023 pm
         </time>
       </span>
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          670 words
+          232 words
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          6 mins
+          2 mins
         
       </span>
     
@@ -308,7 +308,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">763. 划分字母区间</h1>
+            <h1 style="display: none">CF-协同过滤</h1>
             
               <p class="note note-info">
                 
@@ -321,15 +321,16 @@
             
               <div class="markdown-body">
                 
-                <h2 id="链接">[链接🚀]</h2>
-<h3 id="题目">题目</h3>
-<figure>
-<img src="../img/md/leetcode/763.png" srcset="/img/loading.gif" lazyload alt="763" />
-<figcaption aria-hidden="true">763</figcaption>
-</figure>
-<h3 id="题解">题解</h3>
+                <p>本系列参考王喆老师深度学习这本书构建自己的学习笔记。参考RoleRec基于Pytorch实现的相关推荐和CTR算法；</p>
+<p>本小节将记录协调过滤算法，介绍它的目标场景、基本思想、相似度计算方式、基于User的协同过滤（UserCF）、基于Item的协同过滤(ItemCF)、以及UserCF和ItemCF的优缺点对比等等；</p>
+<h2 id="目标场景">目标场景</h2>
+<h2 id="基本思想">基本思想</h2>
+<h2 id="相似度计算方式">相似度计算方式</h2>
+<h2 id="基于user的协同过滤usercf">基于User的协同过滤（UserCF）</h2>
+<h2 id="基于item的协同过滤itemcf">基于Item的协同过滤(ItemCF)</h2>
+<h2 id="usercf和itemcf的优缺点对比">UserCF和ItemCF的优缺点对比</h2>
 <h3 id="代码">代码</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">partitionLabels</span><span class="hljs-params">(String s)</span> &#123;<br>        <br>        <span class="hljs-type">int</span>[] edge = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<span class="hljs-comment">//存储元素最后出现位置的</span><br><br>        <span class="hljs-type">char</span>[] sarray = s.toCharArray();<br><br>        LinkedList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br><br>        <span class="hljs-comment">//统计字符出现最后位置的索引，巧妙的是i不停地++操作 遇到相同的字符则更新最大值；</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sarray.length; i++) &#123;<br>            edge[sarray[i] - <span class="hljs-string">&#x27;a&#x27;</span>] = i;<br>        &#125;<br>        System.out.println(Arrays.toString(edge));<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> ;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sarray.length; i++) &#123;<br>            <span class="hljs-comment">//找到字符的最大边界 ， 这里就是贪心，贪心的是局部最大，用i == right作为局部最大的边界条件；</span><br>            right = Math.max(right, edge[sarray[i] - <span class="hljs-string">&#x27;a&#x27;</span>]);<br>            <span class="hljs-keyword">if</span> (i == right) &#123; <span class="hljs-comment">//找到最远边界</span><br>                list.add(right - left + <span class="hljs-number">1</span>);<br>                left = i +<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> list;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -348,12 +349,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
+  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="category-chain-item">深度学习推荐系统</a>
   
   
     <span>></span>
     
-  <a href="/categories/leetcode/%E8%B4%AA%E5%BF%83%E6%B3%95/" class="category-chain-item">贪心法</a>
+  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="category-chain-item">机器学习</a>
   
   
 
@@ -375,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>763. 划分字母区间</div>
-      <div>http://example.com/2023/02/25/763-划分字母区间/</div>
+      <div>CF-协同过滤</div>
+      <div>http://example.com/2023/02/25/CF-协同过滤/</div>
     </div>
     <div class="license-meta">
       
@@ -425,9 +426,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/25/CF-%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/" title="CF-协同过滤">
+                      <a href="/2023/02/25/56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" title="56. 合并区间">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CF-协同过滤</span>
+                        <span class="hidden-mobile">56. 合并区间</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -435,8 +436,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/" title="435.无重叠区间">
-                        <span class="hidden-mobile">435.无重叠区间</span>
+                      <a href="/2023/02/25/763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/" title="763. 划分字母区间">
+                        <span class="hidden-mobile">763. 划分字母区间</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

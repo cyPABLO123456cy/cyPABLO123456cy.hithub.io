@@ -16,16 +16,16 @@
   <meta name="author" content="赢尘">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[链接🚀] 题目   763  题解 代码 12345678910111213141516171819202122232425262728class Solution &amp;#123;    public List&lt;Integer&gt; partitionLabels(String s) &amp;#123;                int[] edge &#x3D; new int[2">
+    <meta name="description" content="[链接🚀] 题目   56  题解 本题巧妙之处在于确定左边最大右边界的值； 当为重叠区间时，最大边界值为重叠区间右边的最大值，反复比较； 代码 123456789101112131415161718192021222324class Solution &amp;#123;    public int[][] merge(int[][] intervals) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="763. 划分字母区间">
-<meta property="og:url" content="http://example.com/2023/02/25/763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/index.html">
+<meta property="og:title" content="56. 合并区间">
+<meta property="og:url" content="http://example.com/2023/02/25/56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[链接🚀] 题目   763  题解 代码 12345678910111213141516171819202122232425262728class Solution &amp;#123;    public List&lt;Integer&gt; partitionLabels(String s) &amp;#123;                int[] edge &#x3D; new int[2">
+<meta property="og:description" content="[链接🚀] 题目   56  题解 本题巧妙之处在于确定左边最大右边界的值； 当为重叠区间时，最大边界值为重叠区间右边的最大值，反复比较； 代码 123456789101112131415161718192021222324class Solution &amp;#123;    public int[][] merge(int[][] intervals) &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/bg/leetcode.png">
-<meta property="article:published_time" content="2023-02-25T05:53:34.000Z">
-<meta property="article:modified_time" content="2023-02-25T06:24:17.360Z">
+<meta property="article:published_time" content="2023-02-25T10:34:45.000Z">
+<meta property="article:modified_time" content="2023-02-25T10:44:33.078Z">
 <meta property="article:author" content="赢尘">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>763. 划分字母区间 - Hexo</title>
+  <title>56. 合并区间 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="763. 划分字母区间"></span>
+            <span id="subtitle" data-typed-text="56. 合并区间"></span>
           
         </div>
 
@@ -235,7 +235,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-25 13:53" pubdate>
+        <time datetime="2023-02-25 18:34" pubdate>
           February 25, 2023 pm
         </time>
       </span>
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          670 words
+          887 words
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          6 mins
+          8 mins
         
       </span>
     
@@ -308,12 +308,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">763. 划分字母区间</h1>
+            <h1 style="display: none">56. 合并区间</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on 4 hours ago
+                    Last updated on a few seconds ago
                   
                 
               </p>
@@ -324,12 +324,14 @@
                 <h2 id="链接">[链接🚀]</h2>
 <h3 id="题目">题目</h3>
 <figure>
-<img src="../img/md/leetcode/763.png" srcset="/img/loading.gif" lazyload alt="763" />
-<figcaption aria-hidden="true">763</figcaption>
+<img src="../img/md/leetcode/56.png" srcset="/img/loading.gif" lazyload alt="56" />
+<figcaption aria-hidden="true">56</figcaption>
 </figure>
 <h3 id="题解">题解</h3>
+<p>本题巧妙之处在于确定左边最大右边界的值；
+当为重叠区间时，最大边界值为重叠区间右边的最大值，反复比较；</p>
 <h3 id="代码">代码</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">partitionLabels</span><span class="hljs-params">(String s)</span> &#123;<br>        <br>        <span class="hljs-type">int</span>[] edge = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<span class="hljs-comment">//存储元素最后出现位置的</span><br><br>        <span class="hljs-type">char</span>[] sarray = s.toCharArray();<br><br>        LinkedList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br><br>        <span class="hljs-comment">//统计字符出现最后位置的索引，巧妙的是i不停地++操作 遇到相同的字符则更新最大值；</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sarray.length; i++) &#123;<br>            edge[sarray[i] - <span class="hljs-string">&#x27;a&#x27;</span>] = i;<br>        &#125;<br>        System.out.println(Arrays.toString(edge));<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> ;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sarray.length; i++) &#123;<br>            <span class="hljs-comment">//找到字符的最大边界 ， 这里就是贪心，贪心的是局部最大，用i == right作为局部最大的边界条件；</span><br>            right = Math.max(right, edge[sarray[i] - <span class="hljs-string">&#x27;a&#x27;</span>]);<br>            <span class="hljs-keyword">if</span> (i == right) &#123; <span class="hljs-comment">//找到最远边界</span><br>                list.add(right - left + <span class="hljs-number">1</span>);<br>                left = i +<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> list;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] merge(<span class="hljs-type">int</span>[][] intervals) &#123;<br><br>        Arrays.sort(intervals , (a , b) -&gt; Integer.compare(a[<span class="hljs-number">0</span>] , b[<span class="hljs-number">0</span>]));<br><span class="hljs-comment">//        System.out.println(intervals.toString());</span><br>        LinkedList&lt;<span class="hljs-type">int</span>[]&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> intervals[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; <span class="hljs-comment">//开始</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">MaxRightBound</span> <span class="hljs-operator">=</span> intervals[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>];<span class="hljs-comment">//右边界</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; intervals.length; i++) &#123;<br>            <span class="hljs-comment">/*如果不重叠，则将重叠区间插入到链表中，首次插入时，start=interval[0][0] , MaxRightBound[i-1][1]*/</span><br>            <span class="hljs-keyword">if</span> (intervals[i][<span class="hljs-number">0</span>] &gt; MaxRightBound) &#123;<br>                list.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;start , MaxRightBound&#125;);<br>                <span class="hljs-comment">//更新start , MaxRightBound</span><br>                start = intervals[i][<span class="hljs-number">0</span>];<br>                MaxRightBound = intervals[i][<span class="hljs-number">1</span>];<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-comment">/*当为重叠区间时，最大边界值为重叠区间右边的最大值，反复比较；*/</span>&#123;<br>                MaxRightBound = Math.max(MaxRightBound , intervals[i][<span class="hljs-number">1</span>]);<br>            &#125;<br>        &#125;<br>        list.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;start , MaxRightBound&#125;);<br>        <span class="hljs-keyword">return</span> list.toArray(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[list.size()][]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -375,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>763. 划分字母区间</div>
-      <div>http://example.com/2023/02/25/763-划分字母区间/</div>
+      <div>56. 合并区间</div>
+      <div>http://example.com/2023/02/25/56-合并区间/</div>
     </div>
     <div class="license-meta">
       
@@ -425,18 +427,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/25/CF-%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/" title="CF-协同过滤">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CF-协同过滤</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/" title="435.无重叠区间">
-                        <span class="hidden-mobile">435.无重叠区间</span>
+                      <a href="/2023/02/25/CF-%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/" title="CF-协同过滤">
+                        <span class="hidden-mobile">CF-协同过滤</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
