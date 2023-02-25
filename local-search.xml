@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>763. 划分字母区间</title>
+    <link href="/2023/02/25/763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/"/>
+    <url>/2023/02/25/763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接">[链接🚀]</h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/763.png" alt="763" /><figcaption aria-hidden="true">763</figcaption></figure><h3 id="题解">题解</h3><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">partitionLabels</span><span class="hljs-params">(String s)</span> &#123;<br>        <br>        <span class="hljs-type">int</span>[] edge = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<span class="hljs-comment">//存储元素最后出现位置的</span><br><br>        <span class="hljs-type">char</span>[] sarray = s.toCharArray();<br><br>        LinkedList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br><br>        <span class="hljs-comment">//统计字符出现最后位置的索引，巧妙的是i不停地++操作 遇到相同的字符则更新最大值；</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sarray.length; i++) &#123;<br>            edge[sarray[i] - <span class="hljs-string">&#x27;a&#x27;</span>] = i;<br>        &#125;<br>        System.out.println(Arrays.toString(edge));<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> ;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sarray.length; i++) &#123;<br>            <span class="hljs-comment">//找到字符的最大边界 ， 这里就是贪心，贪心的是局部最大，用i == right作为局部最大的边界条件；</span><br>            right = Math.max(right, edge[sarray[i] - <span class="hljs-string">&#x27;a&#x27;</span>]);<br>            <span class="hljs-keyword">if</span> (i == right) &#123; <br>                list.add(right - left + <span class="hljs-number">1</span>);<br>                left = i +<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> list;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>贪心法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>435.无重叠区间</title>
     <link href="/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/"/>
     <url>/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/</url>
