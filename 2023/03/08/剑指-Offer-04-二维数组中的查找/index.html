@@ -16,16 +16,16 @@
   <meta name="author" content="赢尘">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[链接🚀] 题目   435  题解 代码 123456789101112131415161718class Solution &amp;#123;    public int eraseOverlapIntervals(int[][] intervals) &amp;#123;      &#x2F;&#x2F;按照右边界排序        Arrays.sort(intervals , (a , b) -&amp;gt">
+    <meta name="description" content="链接🚀 题目   j04  题解 代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&#x2F;*剑指 Offer 04. 二维数组中的查找    * method1:    * 暴力查找    * 对二维矩阵中的每一个元素都进行遍历并比较    * *">
 <meta property="og:type" content="article">
-<meta property="og:title" content="435.无重叠区间">
-<meta property="og:url" content="http://example.com/2023/02/23/435-%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/index.html">
+<meta property="og:title" content="剑指 Offer 04.二维数组中的查找">
+<meta property="og:url" content="http://example.com/2023/03/08/%E5%89%91%E6%8C%87-Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[链接🚀] 题目   435  题解 代码 123456789101112131415161718class Solution &amp;#123;    public int eraseOverlapIntervals(int[][] intervals) &amp;#123;      &#x2F;&#x2F;按照右边界排序        Arrays.sort(intervals , (a , b) -&amp;gt">
+<meta property="og:description" content="链接🚀 题目   j04  题解 代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&#x2F;*剑指 Offer 04. 二维数组中的查找    * method1:    * 暴力查找    * 对二维矩阵中的每一个元素都进行遍历并比较    * *">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/bg/leetcode.png">
-<meta property="article:published_time" content="2023-02-23T15:50:46.000Z">
-<meta property="article:modified_time" content="2023-02-23T15:52:01.345Z">
+<meta property="article:published_time" content="2023-03-08T04:29:35.000Z">
+<meta property="article:modified_time" content="2023-03-08T04:34:08.246Z">
 <meta property="article:author" content="赢尘">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>435.无重叠区间 - Hexo</title>
+  <title>剑指 Offer 04.二维数组中的查找 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="435.无重叠区间"></span>
+            <span id="subtitle" data-typed-text="剑指 Offer 04.二维数组中的查找"></span>
           
         </div>
 
@@ -235,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-23 23:50" pubdate>
-          February 23, 2023 pm
+        <time datetime="2023-03-08 12:29" pubdate>
+          March 8, 2023 pm
         </time>
       </span>
     
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          471 words
+          1.1k words
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          4 mins
+          9 mins
         
       </span>
     
@@ -308,12 +308,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">435.无重叠区间</h1>
+            <h1 style="display: none">剑指 Offer 04.二维数组中的查找</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on 13 days ago
+                    Last updated on 2 minutes ago
                   
                 
               </p>
@@ -321,15 +321,16 @@
             
               <div class="markdown-body">
                 
-                <h2 id="链接">[链接🚀]</h2>
+                <h2 id="链接"><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/">链接🚀</a></h2>
 <h3 id="题目">题目</h3>
 <figure>
-<img src="../img/md/leetcode/435.png" srcset="/img/loading.gif" lazyload alt="435" />
-<figcaption aria-hidden="true">435</figcaption>
+<img src="../img/md/leetcode/j04.png" srcset="/img/loading.gif" lazyload alt="j04" />
+<figcaption aria-hidden="true">j04</figcaption>
 </figure>
 <h3 id="题解">题解</h3>
 <h3 id="代码">代码</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">eraseOverlapIntervals</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] intervals)</span> &#123;<br>      <span class="hljs-comment">//按照右边界排序</span><br>        Arrays.sort(intervals , (a , b) -&gt; Integer.compare(a[<span class="hljs-number">0</span>] , b[<span class="hljs-number">0</span>]));<br>        <br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; intervals.length; i++) &#123;<br>            <span class="hljs-comment">//判断是否为重叠区间 如果是重叠区间则continue,否则就count++</span><br>            <span class="hljs-keyword">if</span> (intervals[i][<span class="hljs-number">0</span>] &lt; intervals[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) &#123;<br>                <span class="hljs-comment">//重叠了则更新最右边界</span><br>                intervals[i][<span class="hljs-number">1</span>] = Math.min(intervals[i][<span class="hljs-number">1</span>] , intervals[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]);<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                count++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> intervals.length - count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*剑指 Offer 04. 二维数组中的查找</span><br><span class="hljs-comment">    * method1:</span><br><span class="hljs-comment">    * 暴力查找</span><br><span class="hljs-comment">    * 对二维矩阵中的每一个元素都进行遍历并比较</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">findNumberIn2DArray</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : matrix) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> element : row) &#123;<br>                <span class="hljs-keyword">if</span> (element == target) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br><br>    <span class="hljs-comment">/*method2:</span><br><span class="hljs-comment">    * 因为矩阵中的每一行都是递增的，因此我们可以考虑在元素的每一行采用二分查找来寻找目标元素</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">findNumberIn2DArray2</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : matrix) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> BinarySearch(row , target);<br>            <span class="hljs-keyword">if</span> (index &gt;= <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br><br>    <span class="hljs-comment">/*二分查找思路：</span><br><span class="hljs-comment">    * 1、定义两个左右指针，分别只想元素的头和尾</span><br><span class="hljs-comment">    * 2、当左指针小于右指针时，确定中位值用 int num = (right-left) / 2 +left;</span><br><span class="hljs-comment">    * 3、若num等于target则返回该目标值的下标</span><br><span class="hljs-comment">    * 4、若num大于target则应该将右指针左移否则左直接右移</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">BinarySearch</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums , <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> , right = nums.length-<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">middleIndex</span> <span class="hljs-operator">=</span> (right - left) / <span class="hljs-number">2</span> +left;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">middleValue</span> <span class="hljs-operator">=</span> nums[middleIndex];<br>            <span class="hljs-keyword">if</span> (middleValue == target) &#123;<br>                <span class="hljs-keyword">return</span> middleIndex;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (middleValue &gt; target) &#123;<br>                right = middleIndex - <span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                left = middleIndex + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -353,7 +354,7 @@
   
     <span>></span>
     
-  <a href="/categories/leetcode/%E8%B4%AA%E5%BF%83%E6%B3%95/" class="category-chain-item">贪心法</a>
+  <a href="/categories/leetcode/%E5%89%91%E6%8C%87offer%E2%85%A1/" class="category-chain-item">剑指offerⅡ</a>
   
   
 
@@ -375,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>435.无重叠区间</div>
-      <div>http://example.com/2023/02/23/435-无重叠区间/</div>
+      <div>剑指 Offer 04.二维数组中的查找</div>
+      <div>http://example.com/2023/03/08/剑指-Offer-04-二维数组中的查找/</div>
     </div>
     <div class="license-meta">
       
@@ -388,13 +389,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>February 23, 2023</div>
+          <div>March 8, 2023</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>February 23, 2023</div>
+          <div>March 8, 2023</div>
         </div>
       
       
@@ -425,18 +426,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/25/763-%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/" title="763. 划分字母区间">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">763. 划分字母区间</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/23/452-%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E7%9A%84%E7%AE%AD%E5%BC%95%E7%88%86%E6%B0%94%E7%90%83/" title="452. 用最少数量的箭引爆气球">
-                        <span class="hidden-mobile">452. 用最少数量的箭引爆气球</span>
+                      <a href="/2023/03/08/%E5%89%91%E6%8C%87-Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/" title="剑指 Offer 03. 数组中重复的数字">
+                        <span class="hidden-mobile">剑指 Offer 03. 数组中重复的数字</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
