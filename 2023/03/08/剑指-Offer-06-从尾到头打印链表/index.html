@@ -16,16 +16,16 @@
   <meta name="author" content="赢尘">
   <meta name="keywords" content="">
   
-    <meta name="description" content="链接🚀 题目   j03  题解 见代码注释 ### 代码 1234567891011121314151617181920212223242526272829303132public class Solution &amp;#123;    &#x2F;*剑指 Offer 03. 数组中重复的数字    * method1:利用Hashset的特性，set集合是无序、不可重复的，因此在添加元素相同">
+    <meta name="description" content="链接🚀 题目   j06  题解 见注解 ### 代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&#x2F;*剑指 Offer 06. 从尾到头打印链表    * method:    * 1、反转链表，将指针依次修改，初始化一个数组，用于保存链表的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指 Offer 03. 数组中重复的数字">
-<meta property="og:url" content="http://example.com/2023/03/08/%E5%89%91%E6%8C%87-Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/index.html">
+<meta property="og:title" content="剑指 Offer 06. 从尾到头打印链表">
+<meta property="og:url" content="http://example.com/2023/03/08/%E5%89%91%E6%8C%87-Offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="链接🚀 题目   j03  题解 见代码注释 ### 代码 1234567891011121314151617181920212223242526272829303132public class Solution &amp;#123;    &#x2F;*剑指 Offer 03. 数组中重复的数字    * method1:利用Hashset的特性，set集合是无序、不可重复的，因此在添加元素相同">
+<meta property="og:description" content="链接🚀 题目   j06  题解 见注解 ### 代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&#x2F;*剑指 Offer 06. 从尾到头打印链表    * method:    * 1、反转链表，将指针依次修改，初始化一个数组，用于保存链表的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/bg/leetcode.png">
-<meta property="article:published_time" content="2023-03-08T02:49:16.000Z">
-<meta property="article:modified_time" content="2023-03-08T03:22:03.318Z">
+<meta property="article:published_time" content="2023-03-08T06:46:05.000Z">
+<meta property="article:modified_time" content="2023-03-08T06:46:49.529Z">
 <meta property="article:author" content="赢尘">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>剑指 Offer 03. 数组中重复的数字 - Hexo</title>
+  <title>剑指 Offer 06. 从尾到头打印链表 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="剑指 Offer 03. 数组中重复的数字"></span>
+            <span id="subtitle" data-typed-text="剑指 Offer 06. 从尾到头打印链表"></span>
           
         </div>
 
@@ -235,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-08 10:49" pubdate>
-          March 8, 2023 am
+        <time datetime="2023-03-08 14:46" pubdate>
+          March 8, 2023 pm
         </time>
       </span>
     
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          696 words
+          921 words
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          6 mins
+          8 mins
         
       </span>
     
@@ -308,12 +308,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">剑指 Offer 03. 数组中重复的数字</h1>
+            <h1 style="display: none">剑指 Offer 06. 从尾到头打印链表</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on 3 hours ago
+                    Last updated on a few seconds ago
                   
                 
               </p>
@@ -322,15 +322,15 @@
               <div class="markdown-body">
                 
                 <h2 id="链接"><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/?favorite=xb9nqhhg">链接🚀</a></h2>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">链接🚀</a></h2>
 <h3 id="题目">题目</h3>
 <figure>
-<img src="../img/md/leetcode/j03.png" srcset="/img/loading.gif" lazyload alt="j03" />
-<figcaption aria-hidden="true">j03</figcaption>
+<img src="../img/md/leetcode/j06.png" srcset="/img/loading.gif" lazyload alt="j06" />
+<figcaption aria-hidden="true">j06</figcaption>
 </figure>
 <h3 id="题解">题解</h3>
-<p>见代码注释 ### 代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-comment">/*剑指 Offer 03. 数组中重复的数字</span><br><span class="hljs-comment">    * method1:利用Hashset的特性，set集合是无序、不可重复的，因此在添加元素相同时，add返回false;</span><br><span class="hljs-comment">    * Hashset检查重复元素：底层调用的是Hashmap的Put方法，获取待添加对象的Hashcode值，然后再利用equals()方法判断元素是否相同</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findRepeatNumber</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br><br>        Set&lt;Integer&gt; hashSet = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">repeatValue</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">while</span> (!hashSet.add(num))&#123;<br>                repeatValue = num;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> repeatValue;<br>    &#125;<br><br>    <span class="hljs-comment">/*method2:</span><br><span class="hljs-comment">    * 1、将元素排序</span><br><span class="hljs-comment">    * 2、遍历数组，判断相邻元素是否一样，若一样则返回</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findRepeatNumber2</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == nums[i-<span class="hljs-number">1</span>]) &#123;<br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>见注解 ### 代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*剑指 Offer 06. 从尾到头打印链表</span><br><span class="hljs-comment">    * method:</span><br><span class="hljs-comment">    * 1、反转链表，将指针依次修改，初始化一个数组，用于保存链表的结果</span><br><span class="hljs-comment">    * 2、修改链表的指针，从尾指针开始修改</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] reversePrint(ListNode head) &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-type">int</span>[] resnull = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[];<br>            <span class="hljs-keyword">return</span> resnull;<br>        &#125;<br><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">current</span> <span class="hljs-operator">=</span> head.next;<br>        ListNode temp;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">length</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (current!= <span class="hljs-literal">null</span>) &#123;<br>            temp = current.next;<br>            current.next = head;<br>            head = current;<br>            current = temp;<span class="hljs-comment">//这里就已经在移动</span><br>            length++;<br>        &#125;<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[length];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt;= length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (head != <span class="hljs-literal">null</span>) &#123;<br>                res[i] = head.val;<br>            &#125;<br>            head = head.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-comment">/*method1:</span><br><span class="hljs-comment">    * 1、不用反转链表，先遍历得到链表的长度</span><br><span class="hljs-comment">    * 2、初始化一个与链表等长的数组，然后将数组从后往前填入数据；</span><br><span class="hljs-comment">    * */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] reversePrint1(ListNode head) &#123;<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">current</span> <span class="hljs-operator">=</span> head;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">length</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (head != <span class="hljs-literal">null</span>) &#123;<br>            length++;<br>            head = head.next;<br>        &#125;<br><br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[length];<br>        <span class="hljs-keyword">while</span> (current != <span class="hljs-literal">null</span>) &#123;<br>            res[length-<span class="hljs-number">1</span>] = current.val;<br>            length--;<br>            current = current.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -376,8 +376,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/shu-zu-zhong-z
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>剑指 Offer 03. 数组中重复的数字</div>
-      <div>http://example.com/2023/03/08/剑指-Offer-03-数组中重复的数字/</div>
+      <div>剑指 Offer 06. 从尾到头打印链表</div>
+      <div>http://example.com/2023/03/08/剑指-Offer-06-从尾到头打印链表/</div>
     </div>
     <div class="license-meta">
       
@@ -426,18 +426,12 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/shu-zu-zhong-z
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/08/%E5%89%91%E6%8C%87-Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" title="剑指 Offer 04.二维数组中的查找">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">剑指 Offer 04.二维数组中的查找</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/02/%E6%99%BA%E8%83%BD%E6%97%85%E6%B8%B8%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="智能旅游推荐系统-项目介绍及遇到的相关问题记录">
-                        <span class="hidden-mobile">智能旅游推荐系统-项目介绍及遇到的相关问题记录</span>
+                      <a href="/2023/03/08/%E5%89%91%E6%8C%87-Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" title="剑指 Offer 04.二维数组中的查找">
+                        <span class="hidden-mobile">剑指 Offer 04.二维数组中的查找</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
