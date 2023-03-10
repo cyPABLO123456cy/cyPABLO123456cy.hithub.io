@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>剑指 Offer 24. 反转链表</title>
+    <link href="/2023/03/10/%E5%89%91%E6%8C%87-Offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
+    <url>/2023/03/10/%E5%89%91%E6%8C%87-Offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接"><ahref="https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/">链接🚀</a></h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/j24.png" alt="j24" /><figcaption aria-hidden="true">j24</figcaption></figure><h3 id="题解">题解</h3><p>踩坑：当将head.next赋予给concrrentNode时 ### 代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">reverseList</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span> || head.next == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> head;<br>        &#125;<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">conrrentNode</span> <span class="hljs-operator">=</span> head.next; <span class="hljs-comment">// define a current node</span><br>        head.next = <span class="hljs-literal">null</span>;<span class="hljs-comment">//tips : let head.next = null , if not , we traverse the list ,the head.next still origin value</span><br>        ListNode temp; <span class="hljs-comment">//temp node for store listnode.next</span><br>        <span class="hljs-keyword">while</span> (conrrentNode != <span class="hljs-literal">null</span>) &#123;<br>            temp = conrrentNode.next;<br>            conrrentNode.next = head;<br>            head = conrrentNode;<br>            conrrentNode = temp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>剑指offerⅡ</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>剑指 Offer 10- I. 斐波那契数列</title>
     <link href="/2023/03/10/%E5%89%91%E6%8C%87-Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
     <url>/2023/03/10/%E5%89%91%E6%8C%87-Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</url>

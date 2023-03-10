@@ -16,16 +16,16 @@
   <meta name="author" content="赢尘">
   <meta name="keywords" content="">
   
-    <meta name="description" content="105. 从前序与中序遍历序列构造二叉树-链接🚀 题目 题解 在确定每层的左右子树划分时，应当确定中序序列根节点的index。此时中序序列inBegin - rootIndex即为左子数的节点数目； 而rootIndex - inBegin &#x3D; leftOfNode 可以用在划分前序数组的身上 代码 1234567891011121314151617181920212223242">
+    <meta name="description" content="链接🚀 题目   j24  题解 踩坑：当将head.next赋予给concrrentNode时 ### 代码 12345678910111213141516171819202122232425&#x2F;** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     L">
 <meta property="og:type" content="article">
-<meta property="og:title" content="105. 从前序与中序遍历序列构造二叉树">
-<meta property="og:url" content="http://example.com/2022/12/04/105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="剑指 Offer 24. 反转链表">
+<meta property="og:url" content="http://example.com/2023/03/10/%E5%89%91%E6%8C%87-Offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="105. 从前序与中序遍历序列构造二叉树-链接🚀 题目 题解 在确定每层的左右子树划分时，应当确定中序序列根节点的index。此时中序序列inBegin - rootIndex即为左子数的节点数目； 而rootIndex - inBegin &#x3D; leftOfNode 可以用在划分前序数组的身上 代码 1234567891011121314151617181920212223242">
+<meta property="og:description" content="链接🚀 题目   j24  题解 踩坑：当将head.next赋予给concrrentNode时 ### 代码 12345678910111213141516171819202122232425&#x2F;** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     L">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/bg/leetcode.png">
-<meta property="article:published_time" content="2022-12-04T07:46:32.000Z">
-<meta property="article:modified_time" content="2023-03-09T08:39:30.011Z">
+<meta property="article:published_time" content="2023-03-10T06:09:08.000Z">
+<meta property="article:modified_time" content="2023-03-10T06:10:28.535Z">
 <meta property="article:author" content="赢尘">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>105. 从前序与中序遍历序列构造二叉树 - Hexo</title>
+  <title>剑指 Offer 24. 反转链表 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="105. 从前序与中序遍历序列构造二叉树"></span>
+            <span id="subtitle" data-typed-text="剑指 Offer 24. 反转链表"></span>
           
         </div>
 
@@ -235,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-04 15:46" pubdate>
-          December 4, 2022 pm
+        <time datetime="2023-03-10 14:09" pubdate>
+          March 10, 2023 pm
         </time>
       </span>
     
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          660 words
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          10 mins
+          6 mins
         
       </span>
     
@@ -308,12 +308,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">105. 从前序与中序遍历序列构造二叉树</h1>
+            <h1 style="display: none">剑指 Offer 24. 反转链表</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on a day ago
+                    Last updated on 2 minutes ago
                   
                 
               </p>
@@ -321,16 +321,16 @@
             
               <div class="markdown-body">
                 
-                <h2 id="从前序与中序遍历序列构造二叉树-链接">105.
-从前序与中序遍历序列构造二叉树-<a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">链接🚀</a></h2>
+                <h2 id="链接"><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/">链接🚀</a></h2>
 <h3 id="题目">题目</h3>
+<figure>
+<img src="../img/md/leetcode/j24.png" srcset="/img/loading.gif" lazyload alt="j24" />
+<figcaption aria-hidden="true">j24</figcaption>
+</figure>
 <h3 id="题解">题解</h3>
-<p>在确定每层的左右子树划分时，应当确定中序序列根节点的index。此时中序序列inBegin
-- rootIndex即为左子数的节点数目； 而rootIndex - inBegin = leftOfNode
-可以用在划分前序数组的身上</p>
-<h3 id="代码">代码</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    Map&lt;Integer , Integer&gt; map;<br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">buildTree</span><span class="hljs-params">(<span class="hljs-type">int</span>[] preorder, <span class="hljs-type">int</span>[] inorder)</span> &#123;<br>        map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> ; i &lt; inorder.length ; i++) &#123;<br>            map.put(inorder[i] , i); <span class="hljs-comment">//将中序数组放入到map中</span><br>        &#125;<br><br>        <span class="hljs-keyword">return</span> PreAndInBuild(preorder , <span class="hljs-number">0</span> , preorder.length,<br>                            inorder , <span class="hljs-number">0</span> , inorder.length);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">PreAndInBuild</span><span class="hljs-params">(<span class="hljs-type">int</span>[] preorder ,<span class="hljs-type">int</span> preBein , <span class="hljs-type">int</span> preEnd,<span class="hljs-type">int</span>[] inorder , <span class="hljs-type">int</span> inBegin , <span class="hljs-type">int</span> inEnd )</span> &#123;<br>        <span class="hljs-keyword">if</span> (preBein &gt;= preEnd || inBegin &gt;= inEnd) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">rootIndex</span> <span class="hljs-operator">=</span> map.get(preorder[preBein]); <span class="hljs-comment">// 得到子树的根节点的索引</span><br>        <span class="hljs-type">TreeNode</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TreeNode</span>(inorder[rootIndex]); <span class="hljs-comment">//创建根节点</span><br><br>        <span class="hljs-comment">//重新分配子树的区间</span><br>        <span class="hljs-comment">/* </span><br><span class="hljs-comment">        1. 左子树的区间：以中序序列的根节点位置 将中序序列分为两个子树的区间</span><br><span class="hljs-comment">        int LeftOfNode = rootIndex - inBegin;保存中序序列左子树的个数，确定前序序列中的左子树的个数；</span><br><span class="hljs-comment">        int RightOfNode = </span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">LeftOfNode</span> <span class="hljs-operator">=</span> rootIndex - inBegin;<br><br>        root.left = PreAndInBuild(preorder , preBein + <span class="hljs-number">1</span> , preBein + LeftOfNode + <span class="hljs-number">1</span>,  inorder , inBegin , rootIndex);<br><br>        root.right = PreAndInBuild(preorder , preBein + LeftOfNode +<span class="hljs-number">1</span>, preEnd  , inorder , rootIndex + <span class="hljs-number">1</span> , inEnd); <br><br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>踩坑：当将head.next赋予给concrrentNode时 ### 代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">reverseList</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span> || head.next == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> head;<br>        &#125;<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">conrrentNode</span> <span class="hljs-operator">=</span> head.next; <span class="hljs-comment">// define a current node</span><br>        head.next = <span class="hljs-literal">null</span>;<span class="hljs-comment">//tips : let head.next = null , if not , we traverse the list ,the head.next still origin value</span><br>        ListNode temp; <span class="hljs-comment">//temp node for store listnode.next</span><br>        <span class="hljs-keyword">while</span> (conrrentNode != <span class="hljs-literal">null</span>) &#123;<br>            temp = conrrentNode.next;<br>            conrrentNode.next = head;<br>            head = conrrentNode;<br>            conrrentNode = temp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -354,7 +354,7 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-bina
   
     <span>></span>
     
-  <a href="/categories/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="category-chain-item">二叉树</a>
+  <a href="/categories/leetcode/%E5%89%91%E6%8C%87offer%E2%85%A1/" class="category-chain-item">剑指offerⅡ</a>
   
   
 
@@ -376,8 +376,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-bina
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>105. 从前序与中序遍历序列构造二叉树</div>
-      <div>http://example.com/2022/12/04/105-从前序与中序遍历序列构造二叉树/</div>
+      <div>剑指 Offer 24. 反转链表</div>
+      <div>http://example.com/2023/03/10/剑指-Offer-24-反转链表/</div>
     </div>
     <div class="license-meta">
       
@@ -389,13 +389,13 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-bina
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 4, 2022</div>
+          <div>March 10, 2023</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>March 9, 2023</div>
+          <div>March 10, 2023</div>
         </div>
       
       
@@ -426,18 +426,12 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-bina
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/04/654-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" title="654. 最大二叉树">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">654. 最大二叉树</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/03/106-%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/" title="106. 从中序与后序遍历序列构造二叉树">
-                        <span class="hidden-mobile">106. 从中序与后序遍历序列构造二叉树</span>
+                      <a href="/2023/03/10/%E5%89%91%E6%8C%87-Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" title="剑指 Offer 10- I. 斐波那契数列">
+                        <span class="hidden-mobile">剑指 Offer 10- I. 斐波那契数列</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
