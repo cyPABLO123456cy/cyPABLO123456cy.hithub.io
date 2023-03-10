@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>剑指 Offer 09. 用两个栈实现队列</title>
+    <link href="/2023/03/10/%E5%89%91%E6%8C%87-Offer-09-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
+    <url>/2023/03/10/%E5%89%91%E6%8C%87-Offer-09-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接"><ahref="https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/">链接🚀</a></h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/j09.png" alt="j09" /><figcaption aria-hidden="true">j09</figcaption></figure><h3 id="题解">题解</h3><p>见注释 ### 代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CQueue</span> &#123;<br><br>   <span class="hljs-comment">/*用两个栈模拟一个队列的情况*/</span><br>    Deque&lt;Integer&gt; inDeque;<br>    Deque&lt;Integer&gt; outDeque;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">CQueue</span><span class="hljs-params">()</span> &#123;<br>        inDeque = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;Integer&gt;();<br>        outDeque = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;Integer&gt;();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">appendTail</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>        inDeque.push(value);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">deleteHead</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//先判断出栈中是否为空</span><br>        <span class="hljs-keyword">if</span> (outDeque.isEmpty()) &#123;<br>            <span class="hljs-comment">//再判断入栈中是否为空</span><br>            <span class="hljs-keyword">if</span> (inDeque.isEmpty()) &#123;<br>                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>            &#125;<br>            appendTail1();<span class="hljs-comment">//将入栈中的元素输入到出栈中</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> outDeque.pop();<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">appendTail1</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">while</span> (!inDeque.isEmpty())&#123;<br>            outDeque.push(inDeque.pop());<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Your CQueue object will be instantiated and called as such:</span><br><span class="hljs-comment"> * CQueue obj = new CQueue();</span><br><span class="hljs-comment"> * obj.appendTail(value);</span><br><span class="hljs-comment"> * int param_2 = obj.deleteHead();</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>剑指offerⅡ</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>剑指 Offer 07. 重建二叉树</title>
     <link href="/2023/03/09/%E5%89%91%E6%8C%87-Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <url>/2023/03/09/%E5%89%91%E6%8C%87-Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
