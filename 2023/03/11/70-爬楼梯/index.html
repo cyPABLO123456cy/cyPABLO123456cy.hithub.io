@@ -16,16 +16,16 @@
   <meta name="author" content="赢尘">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[链接🚀]  题目   题解 按照程序员卡尔的递归五部曲： 1、定义dp数据，并阐明含义 2、确定动态规划的递推公式  本题： 假如n &#x3D; 1 , n_tiems &#x3D; 1; 假如n &#x3D; 2 , n_tiems &#x3D; 2; 假如n &#x3D; 3 , n_tiems &#x3D; 3; 假如n &#x3D; 4 , n_tiems &#x3D; 5; 假如n &#x3D; 5 , n_tiems &#x3D; 8; 递推公式：dp[i] &#x3D; dp[i-1">
+    <meta name="description" content="链接🚀 题目   455  题解 按照程序员卡尔的递归五部曲： 1、定义dp数据，并阐明含义 2、确定动态规划的递推公式 - 本题： - 假如n &#x3D; 1 , n_tiems &#x3D; 1; - 假如n &#x3D; 2 , n_tiems &#x3D; 2; - 假如n &#x3D; 3 , n_tiems &#x3D; 3; - 假如n &#x3D; 4 , n_tiems &#x3D; 5; - 假如n &#x3D; 5 , n_tiems &#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="70. 爬楼梯">
 <meta property="og:url" content="http://example.com/2023/03/11/70-%E7%88%AC%E6%A5%BC%E6%A2%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[链接🚀]  题目   题解 按照程序员卡尔的递归五部曲： 1、定义dp数据，并阐明含义 2、确定动态规划的递推公式  本题： 假如n &#x3D; 1 , n_tiems &#x3D; 1; 假如n &#x3D; 2 , n_tiems &#x3D; 2; 假如n &#x3D; 3 , n_tiems &#x3D; 3; 假如n &#x3D; 4 , n_tiems &#x3D; 5; 假如n &#x3D; 5 , n_tiems &#x3D; 8; 递推公式：dp[i] &#x3D; dp[i-1">
+<meta property="og:description" content="链接🚀 题目   455  题解 按照程序员卡尔的递归五部曲： 1、定义dp数据，并阐明含义 2、确定动态规划的递推公式 - 本题： - 假如n &#x3D; 1 , n_tiems &#x3D; 1; - 假如n &#x3D; 2 , n_tiems &#x3D; 2; - 假如n &#x3D; 3 , n_tiems &#x3D; 3; - 假如n &#x3D; 4 , n_tiems &#x3D; 5; - 假如n &#x3D; 5 , n_tiems &#x3D;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/bg/leetcode.png">
 <meta property="article:published_time" content="2023-03-11T05:06:49.000Z">
-<meta property="article:modified_time" content="2023-03-11T05:49:22.084Z">
+<meta property="article:modified_time" content="2023-03-11T05:57:04.046Z">
 <meta property="article:author" content="赢尘">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          644 words
+          654 words
         
       </span>
     
@@ -321,32 +321,27 @@
             
               <div class="markdown-body">
                 
-                <h2 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> [链接🚀]</h2>
-<h3 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目</h3>
-<p><img src="../img/md/leetcode/455.png" srcset="/img/loading.gif" lazyload alt="455" /></p>
-<h3 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h3>
-<p>按照程序员卡尔的递归五部曲：<br />
-1、定义dp数据，并阐明含义<br />
-2、确定动态规划的递推公式</p>
-<ul>
-<li>本题：</li>
-<li>假如n = 1 , n_tiems = 1;</li>
-<li>假如n = 2 , n_tiems = 2;</li>
-<li>假如n = 3 , n_tiems = 3;</li>
-<li>假如n = 4 , n_tiems = 5;</li>
-<li>假如n = 5 , n_tiems = 8;<br />
-递推公式：dp[i] = dp[i-1] + dp[1-2];<br />
-3、确定动态规划的初始化<br />
-这里先定义一个dp数组长度为n+1，之所以是n+1是因为数组是从0开始计数的 因此数组中第n+1位的值刚好就是我们需要返回的n个台阶所返回的值；<br />
+                <h2 id="链接"><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/">链接🚀</a></h2>
+<h3 id="题目">题目</h3>
+<figure>
+<img src="../img/md/leetcode/455.png" srcset="/img/loading.gif" lazyload alt="455" />
+<figcaption aria-hidden="true">455</figcaption>
+</figure>
+<h3 id="题解">题解</h3>
+<p>按照程序员卡尔的递归五部曲： 1、定义dp数据，并阐明含义
+2、确定动态规划的递推公式 - 本题： - 假如n = 1 , n_tiems = 1; - 假如n =
+2 , n_tiems = 2; - 假如n = 3 , n_tiems = 3; - 假如n = 4 , n_tiems = 5; -
+假如n = 5 , n_tiems = 8; 递推公式：dp[i] = dp[i-1] + dp[1-2];
+3、确定动态规划的初始化
+这里先定义一个dp数组长度为n+1，之所以是n+1是因为数组是从0开始计数的
+因此数组中第n+1位的值刚好就是我们需要返回的n个台阶所返回的值；<br />
 然后就是dp[1] = 1;<br />
 dp[2] = 2;<br />
 之所以不从dp[0]开始初始化的原因是，即使初始化dp[0]也是没有意义的；<br />
-4、确定遍历顺序<br />
-也是从前往后遍历<br />
-5、打印数组</li>
-</ul>
-<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
+4、确定遍历顺序 也是从前往后遍历 5、打印数组 ### 代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-comment">/**recurrence formula: dp[i] = dp[i-1] + dp[i-2]</span><br><span class="hljs-comment">        * init dp[] array</span><br><span class="hljs-comment">        * */</span> <br>        <span class="hljs-comment">// boundary condition</span><br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">return</span> n;<br>        &#125;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n+<span class="hljs-number">1</span>];<br>        <span class="hljs-comment">/*init dp[];*/</span><br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>; i &lt;= n; i++) &#123;<br>            dp[i] = dp[i-<span class="hljs-number">1</span>] + dp[i-<span class="hljs-number">2</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -440,6 +435,12 @@ dp[2] = 2;<br />
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/03/11/746-%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="746. 使用最小花费爬楼梯">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">746. 使用最小花费爬楼梯</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
