@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="赢尘">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="[链接🚀]   美团  T1 题目描述： 第一行一个整数n，合义见题面。 接下来一行n个整数a1,a2,…,an，依次表示小美初始写下的连加算式中的每一个数。 接下来一个整数m，表示小美做了m次算数训练 接下来2m个以空格分开数字或符号 t1,o1, t2,o2, … tm,om，其中ti为数字，oi是’+’,’-’,’’,’&#x2F;’(即加减乘除符号，不含引号)中的一个符号，表示第 i 次操作选定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4.1号美团笔试真题及解析">
+<meta property="og:url" content="http://example.com/2023/04/07/4-1%E5%8F%B7%E7%BE%8E%E5%9B%A2%E7%AC%94%E8%AF%95%E7%9C%9F%E9%A2%98%E5%8F%8A%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[链接🚀]   美团  T1 题目描述： 第一行一个整数n，合义见题面。 接下来一行n个整数a1,a2,…,an，依次表示小美初始写下的连加算式中的每一个数。 接下来一个整数m，表示小美做了m次算数训练 接下来2m个以空格分开数字或符号 t1,o1, t2,o2, … tm,om，其中ti为数字，oi是’+’,’-’,’’,’&#x2F;’(即加减乘除符号，不含引号)中的一个符号，表示第 i 次操作选定">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/bg/leetcode.png">
+<meta property="article:published_time" content="2023-04-07T09:02:21.000Z">
+<meta property="article:modified_time" content="2023-04-07T09:22:55.968Z">
+<meta property="article:author" content="赢尘">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/bg/leetcode.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>4.1号美团笔试真题及解析 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 90vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>赢尘</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont codeicon-code"></i>
+                <span>leetcode</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/arrays/">
+                    
+                    <span>数组</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>存档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于我</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/tk.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="4.1号美团笔试真题及解析"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-07 17:02" pubdate>
+          April 7, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          69 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">4.1号美团笔试真题及解析</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    Last updated on a few seconds ago
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> [链接🚀]</h2>
+<p><img src="../img/bg/meituan1.jpg" srcset="/img/loading.gif" lazyload alt="image" /></p>
+<h1 id="美团"><a class="markdownIt-Anchor" href="#美团"></a> 美团</h1>
+<h3 id="t1"><a class="markdownIt-Anchor" href="#t1"></a> T1</h3>
+<p>题目描述：</p>
+<p>第一行一个整数n，合义见题面。 接下来一行n个整数a1,a2,…,an，依次表示小美初始写下的连加算式中的每一个数。 接下来一个整数m，表示小美做了m次算数训练 接下来2m个以空格分开数字或符号 t1,o1, t2,o2, … tm,om，其中ti为数字，oi是’+’,’-’,’<em>’,’/’(即加减乘除符号，不含引号)中的一个符号，表示第 i 次操作选定了第ti个加号，将其改变为了oi。 对于所有的的数据,2≤N≤50000，1≤M≤50000,1≤ai≤500,1≤ti } ​</em></p>
+<p>题目描述输出：<em>​ ​</em></p>
+<p><em>输出一行m个整数，分别表示每次操作的答案，结果四舍五入到一位小数。 样例输入： 5 1 2 4 2 5 3 1 - 2 * 4 / 样例输出： 10.0 16.0 7.4 promot: 样例解释 第一次操作后算数式为1-2+4+2+5 = 10.0 第二次操作后算数式为1+2</em>4+2+5 = 16.0 第三次操作后算数式为1+2+4+2/5 = 7.4 值得注意的是，每次操作都认为对初始的全加号式子(此处为1+2+4+2+5)进行操作，操作之间互不影响。</p>
+<p>题解：</p>
+<ol>
+<li>第一个数确定了下一行的个数</li>
+<li>第三个数确定了最后一行的字符串长度为第三个数的2倍</li>
+<li>第二个数组与第四个数组之间的关系：第四个数组上的整数值是第二个数组的索引</li>
+<li>因此，我们先将第二个数组的总和先计算出来，然后再将变动数组的值单独计算</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 接受用户输入</span><br><span class="hljs-comment">         * */</span><br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">cin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">lineNum</span> <span class="hljs-operator">=</span> cin.nextInt();<br>        <span class="hljs-type">int</span>[] inputNum = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[lineNum];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; lineNum; j++) &#123;<br>            inputNum[j] = cin.nextInt();<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">operateTimes</span> <span class="hljs-operator">=</span> cin.nextInt();<br>        String[] inputSequence = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[<span class="hljs-number">2</span>*operateTimes];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; len &lt; inputSequence.length; len++) &#123;<br>            inputSequence[len] = cin.next();<br>        &#125;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 处理逻辑</span><br><span class="hljs-comment">         * */</span><br>        Double[] result = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Double</span>[operateTimes];<br>        Double sum=<span class="hljs-number">0.0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; inputNum.length; i++) &#123;<br>            sum += <span class="hljs-number">1.0</span>*inputNum[i];<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 记录结果次数</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span> * operateTimes; i++) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">operator</span> <span class="hljs-operator">=</span> inputSequence[i];<br>                <span class="hljs-type">String</span> <span class="hljs-variable">times</span> <span class="hljs-operator">=</span> inputSequence[i-<span class="hljs-number">1</span>];<br>                <span class="hljs-type">int</span> <span class="hljs-variable">time</span> <span class="hljs-operator">=</span> Integer.parseInt(times);<br><br>                <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> inputNum[time-<span class="hljs-number">1</span>] , b = inputNum[time];<br><br>                <span class="hljs-type">Double</span> <span class="hljs-variable">pre</span> <span class="hljs-operator">=</span> sum - (a+b);<br>                <span class="hljs-keyword">switch</span> (operator)&#123;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>:<br>                        pre += (a-b);<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:<br>                        pre += (a/b);<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>:<br>                        pre += (a*b);<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-keyword">default</span>:<br>                        pre += (a+b);<br>                        <span class="hljs-keyword">break</span>;<br>                &#125;<br>                result[k] = pre;<br>                k++;<br>            &#125;<br>        &#125;<br><br>	System.out.println(Arrays.toString(result).replace(<span class="hljs-string">&quot;[&quot;</span>,<span class="hljs-string">&quot;&quot;</span>)<br>                .replace(<span class="hljs-string">&quot;,&quot;</span>, <span class="hljs-string">&quot; &quot;</span>)<br>                .replace(<span class="hljs-string">&quot;]&quot;</span>, <span class="hljs-string">&quot;&quot;</span>));<br></code></pre></td></tr></table></figure>
+<h3 id="t2"><a class="markdownIt-Anchor" href="#t2"></a> T2</h3>
+<p>题目描述：</p>
+<p>小美正在整理桌子上的一排装饰品。小美对待装饰品摆放方式的审美角度很奇特，她认为高度相差比较大的装饰品放在相邻位置会很难看， 她想对这一排装饰品进行整理，可以交换任意两个装饰品的位置任意多次。假设当前从左到右n个装饰品的高度分别为h1,h2,…,hn， 那么当前这一排装饰品的丑陋值为，其中|x|为x的绝对值。小美想最小化她的装饰品的丑陋值，请你帮她排一下顺序。 形式化地来讲，有一长为n的序列a1,a2,…,an，你可以任意次数地进行交换，每次交换都可以选择任意两个不同的数i,j,交换ai,aj的位置。 假设经过若干次交换后，序列变为h1,h2,…,hn，其丑陋值为 ，你需要找出一种交换方式，使得最终序列{hn}的丑陋值最小化。 你不需要输出具体交换方式，只需要输出最终的{hn}序列的丑陋值即可。 输入描述 第一行一个整数n，表示小美的装饰品数量。 接下来一行n个整数a1,a2,…,an，依次表示从左到右n个装饰品的高度。 对于所有的数据:2≤N≤50000，0≤ai≤109。 输出描述 输出第一行一个数，为最优方案的最小丑陋值。</p>
+<p>样例输入：</p>
+<p>3</p>
+<p>3 1 2</p>
+<p>样例输出</p>
+<p>2</p>
+<p>提示</p>
+<p>我们可以将3和1交换，得到 1 3 2 然后再将2和3交换，得到 1 2 3 可以证明，此时有最小丑陋值</p>
+<p>|1-2|+|2-3|=2</p>
+<p>题解：</p>
+<ol>
+<li>分析输入。输入的第一个值 确定了一共有多少个数可以输出，输出的值要求最少，相邻元素之间的差最小，因此将输入序列排序，然后依次计算两两数的差。详细代码如下：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">cin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> cin.nextInt();<br><br>        <span class="hljs-type">int</span>[] InputNum = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; InputNum.length; i++) &#123;<br>            InputNum[i] = cin.nextInt();<br>        &#125;<br><br>        Arrays.sort(InputNum); <span class="hljs-comment">// sort</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-comment">//为什么是n - 1？</span><br>            <span class="hljs-comment">//需要使用i , i+1 , 因此当i = n - 2时，i + 1 = n - 1，刚好等于最后一个数组的值；</span><br>            res += Math.abs(InputNum[i] - InputNum[i+<span class="hljs-number">1</span>]);<span class="hljs-comment">//取绝对值的差</span><br>        &#125;<br>        System.out.println(res);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="t3"><a class="markdownIt-Anchor" href="#t3"></a> T3</h3>
+<p>题目描述：</p>
+<p>小美爱上了收藏！现在她给自己修建了一排n个收藏夹分别编号为1,2,3,…,n。 有时小美会改变某一个收藏夹里的内容，例如从中拿入、拿出一些藏品，这样的操作会改变小美对这个收藏夹的欣赏程度，我们记编号为i的收藏夹小美对其的欣赏程度为ai。还有一些时候，小美会欣赏连续编号的一些收藏夹，例如编号为L,L+1,L+2,…,R-1,R的这一些收藏夹，她能从中获得的满足感为这些收藏夹的欣赏程度之和，即 。 小美想在欣赏之前提前做一些评估，想知道如果她选择编号区间为[L,R]的收藏夹，能给她带来的满足感是多少。小美想请你，最好的朋友，来帮帮她。</p>
+<p>输入描述：</p>
+<p>第一行两个整数n和m，表示小美的收藏夹数量和小美的操作数量。初始时刻收藏夹都是空的，也即ai=0(i∈[1,n]) 第二行m个整数op1,op2,…,opm。 第三行m个整数x1,x2,…,xm。 第四行m个整数y1,y2,…,ym，这些共同表示了m次操作。</p>
+<p>具体而言，对第i次操作，opi=0时表示为一次收藏夹更新操作，会将xi位置的收藏夹欣赏程度更新为yi，即axi=yi；opi=1时表示为一次查询操作，表示如果小美欣赏编号在区间[xi,yi]的收藏夹，能获得的满足感是多少，也即的值。 对于所有的数据，1≤n,m≤ 50000,opi∈{0,1},当opi=0 时,1≤xi≤n,0≤yi≤10000; 当opi=1 时，1≤xi≤yi≤n。保证至少有一次opi=1 的操作。</p>
+<p>输出描述：</p>
+<p>对每个opi=1的操作，输出一个数表示对应答案。空格隔开所有答案。</p>
+<p>样例输入：</p>
+<p>4 7</p>
+<p>1 0 1 0 1 0 1</p>
+<p>1 1 1 3 1 4 1</p>
+<p>3 2 3 5 3 100 3</p>
+<p>样例输出</p>
+<p>0 2 7 7</p>
+<p>提示</p>
+<p>样例解释 操作记录为 0 0 0 0 (初始) &lt;询问[1,3],结果为0+0+0&gt; 2 0 0 0 &lt;1号更改为2&gt; &lt;询问[1,3],结果为2+0+0&gt; 2 0 5 0 &lt;3号更改为5&gt; &lt;询问[1,3],结果为2+0+5&gt; 2 0 5 100 &lt;4号更改为100&gt; &lt;询问[1,3],结果为2+0+5&gt;</p>
+<p>题解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">cin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> cin.nextInt();<span class="hljs-comment">//收藏n个物品</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> cin.nextInt();<span class="hljs-comment">//m次操作</span><br>        cin.nextLine();<br><br>        <span class="hljs-type">int</span>[] collects = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-type">int</span>[] operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m];<span class="hljs-comment">//存储操作数组</span><br>        <span class="hljs-type">int</span>[] operatorArray1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m]; <span class="hljs-comment">//one</span><br>        <span class="hljs-type">int</span>[] operatorArray2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m]; <span class="hljs-comment">//two</span><br><br><span class="hljs-comment">//        for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="hljs-comment">//            collects[i] = 0;</span><br><span class="hljs-comment">//        &#125;</span><br><br><span class="hljs-comment">//        cin.nextLine();</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; operator.length; i++) &#123;<br>            operator[i] = cin.nextInt();<br>        &#125;<br><br>        cin.nextLine();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; operatorArray1.length; i++) &#123;<br>            operatorArray1[i] = cin.nextInt();<br>        &#125;<br><br>        cin.nextLine();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; operatorArray2.length; i++) &#123;<br>            operatorArray2[i] = cin.nextInt();<br>        &#125;<br><br>        <span class="hljs-comment">// deal logic</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; operator.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (operator[i] == <span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> operatorArray1[i] -<span class="hljs-number">1</span>; j &lt; operatorArray2[i]; j++) &#123;<br>                    res += collects[j];<br>                &#125;<br>                System.out.println(res);<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                collects[operatorArray1[i]-<span class="hljs-number">1</span>] = operatorArray2[i];<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="t4"><a class="markdownIt-Anchor" href="#t4"></a> T4</h3>
+<p>题目描述：</p>
+<p>小美最近在魔法课中掌握了倒水魔法：可以运用法力隔空倒水。最近魔法课考试临近，小美早早地来到了魔法训练室训练难以掌握的倒水魔法。 魔法训练室里有n个神奇的杯子，有着不同的大小，假设第i个杯子已满，向其倒水，多余的水会正正好好流向第i+1个杯子（如果i=n时没有下一个杯子，不会有杯子接住此时多余的水而溢出到魔法训练室的水池）。 这些杯子有着初始固定的水量，每次练习后杯子里的水都会还原到最初状态。每次练习时，魔法黑板会告诉小美需要将哪一个杯子倒满水。因为每个杯子的材质和形状有所不同，所以对其释放倒水魔法需要消耗的魔法值不同。小美想尽可能多练习，所以需要最小化每次消耗的魔法值的总量。</p>
+<p>输入描述：</p>
+<p>第一行一个整数n，表示杯子数量。 第二行n个整数x1,x2,…,xn，依次表示第 i 个杯子能容纳水的量（单位为毫升）。 第三行n个整数y1,y2,…,yn，依次表示第 i 个杯子初始有的水量（单位为毫升）。 第四行n个整数z1,z2,…,zn，依次表示对第 i 个杯子每添加1毫升水需要消耗的法力值。 第五行一个整数m，表示练习的数量。 第六行m个整数q1,q2,…,qm，依次表示第i次练习时需要将第qi个杯子倒满。（每次练习过后，杯子里的水量都会还原为初始状态，不会影响到下一次练习） 1≤n,m≤3000 , 1≤yi≤xi≤109, 1≤zi≤300,1≤qi≤n 输出描述 输出第一行m个数，依次表示每次训练时需要消耗的最小法力值。如果杯子初始本身就是满的，则需要消耗的法力值为0。</p>
+<p>样例输入：</p>
+<p>3</p>
+<p>1 2 3</p>
+<p>1 1 2</p>
+<p>1 2 5</p>
+<p>2</p>
+<p>3 1</p>
+<p>样例输出：</p>
+<p>2 0</p>
+<p>提示 ：</p>
+<p>样例解释 第一次训练，最优方案如下： 初始时杯子的水量和最大容量分别为 1/1 1/2 2/3 1. 给1号杯子（本身已满）倒水1毫升，消耗1点法力，水溢出转移到2号杯子，当前状态为 1/1 2/2 2/3 2. 继续给1号杯子（本身已满）倒水1毫升，消耗1点法力，水溢出到2号杯子（也已满），继续溢出到3号杯子,此时3号杯子也被成功注满水，状态为： 1/1 2/2 3/3 共消耗2点法力。可以证明没有更优方案。 第二次训练时， 初始时杯子的水量和最大容量分别为（注意不同训练互不影响，因为训练结束后魔法会让水杯还原为初始状态） 1/1 1/2 2/3 可以发现1号杯子已满，不用注水，消耗法力为0。</p>
+<p>题解：</p>
+<p>维护一个两个水杯的差 也就是前缀和，前缀和的优点是，便于计算区间的差值，只需要维护好这个差值的前缀和就好了</p>
+<p>本题的前缀和计算方式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>		<span class="hljs-comment">// 前缀和数组比原来的数组长度多1，这里是计算两个数组差值的前缀和，因此只需要将前面的和与当前的差</span><br>            PreSum[i+<span class="hljs-number">1</span>] = PreSum[i] + Capacity[i] - InitCapacity[i];<br>        &#125;<br></code></pre></td></tr></table></figure>
+<p>完整代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">cin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> cin.nextInt();<br><br>        <span class="hljs-type">int</span>[] Capacity = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-type">int</span>[] InitCapacity = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-type">int</span>[] Cost = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-type">int</span>[] PreSum = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n+<span class="hljs-number">1</span>];<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; Capacity.length; i++) &#123;<br>            Capacity[i] = cin.nextInt();<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; InitCapacity.length; i++) &#123;<br>            InitCapacity[i] = cin.nextInt();<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; Cost.length; i++) &#123;<br>            Cost[i] = cin.nextInt();<br>        &#125;<br>        <span class="hljs-comment">//compute preSum</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            PreSum[i+<span class="hljs-number">1</span>] = PreSum[i] + Capacity[i] - InitCapacity[i];<br>        &#125;<br>        <span class="hljs-comment">//deal logic</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> cin.nextInt();<br>        <span class="hljs-type">int</span>[] operatorTimes = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m];<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; operatorTimes.length; i++) &#123;<br>            operatorTimes[i] = cin.nextInt();<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">times</span> <span class="hljs-operator">=</span> operatorTimes[i];<br>            <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> Integer.MAX_VALUE;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; times; j++) &#123;<br>                res = Math.min(res , (PreSum[times] - PreSum[j])*Cost[j]);<br>            &#125;<br>            System.out.println(res);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="t5"><a class="markdownIt-Anchor" href="#t5"></a> T5</h3>
+<p>题目描述：</p>
+<p>你现在有一棵树，树上的每个节点都有自己的价值。价值的计算规则如下所示： ① 若某节点N没有儿子节点，那么节点N价值为1； ② 若某节点N有两个儿子节点，那么节点N价值为两个儿子节点的价值之和，或者价值之按位异或。这取决于节点N的颜色，若N的颜色为红色，那么节点N价值为两个儿子节点的价值之和；若N的颜色为绿色，那么节点N价值为两个儿子节点的价值之按位异或。 保证这棵树要么没有儿子节点，要么有两个儿子节点。 注：树，是一种无向无环联通图。 按位运算就是基于整数的二进制表示进行的运算。按位异或用符号⊕表示，两个对应位不同时为1，否则为0。 如： 5=(101)2 6=(110)2 5⊕6=3，即 (101)2 ⊕ (110)2 = (011)2</p>
+<p>输入描述：</p>
+<p>第一行一个正整数n表示节点个数。 第二行n-1个正整数p<a href="2%E2%89%A4i%E2%89%A4n">i</a>表示第 i 个节点的父亲。1号节点是根节点。 第三行n个整数c<a href="1%E2%89%A4i%E2%89%A4n">i</a>，当c[i] = 1时表示第 i 个节点是红色，c[i] = 2则表示绿色。 数据保证形成合法的树。 对于所有的数据，n≤50000</p>
+<p>输出描述：</p>
+<p>输出一行一个整数表示根节点的值。</p>
+<p>样例输入</p>
+<p>3</p>
+<p>1 1</p>
+<p>2  2 2</p>
+<p>样例输出 0</p>
+<p>提示：</p>
+<p>样例如图所示。 因为2号节点和3号节点都没有儿子，因此值都为1。 因为1号节点的颜色是绿色，因此1号节点的值是2号节点的值和3号节点的按位异或，为0。</p>
+<p>题解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">five</span> &#123;<br>    <span class="hljs-comment">//用map描述父子关系，再深度优先搜索</span><br>    <span class="hljs-keyword">static</span> Map&lt;Integer , List&lt;Integer&gt;&gt; rootChild = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-keyword">static</span> Map&lt;Integer , Integer&gt; color = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">cin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> cin.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; <span class="hljs-comment">//???</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++, id++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> cin.nextInt();<br>            List&lt;Integer&gt; child = rootChild.get(root);<br>            <span class="hljs-keyword">if</span> (child == <span class="hljs-literal">null</span>)&#123;<br>                child = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>            &#125;<br>            child.add(id);<br>            rootChild.put(root , child);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            color.put(i + <span class="hljs-number">1</span> , cin.nextInt());<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> dfs(<span class="hljs-number">1</span>);<br>        System.out.println(res);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>        <span class="hljs-keyword">if</span> (!rootChild.containsKey(i))&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>        List&lt;Integer&gt; childs = rootChild.get(i);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> childs.get(<span class="hljs-number">0</span>) , right = childs.get(<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span> (color.get(left) == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> dfs(left) +dfs(right);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> dfs(left)^dfs(right);<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/2024%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" class="category-chain-item">2024暑期实习笔试</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/2024%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/%E7%BE%8E%E5%9B%A2/" class="category-chain-item">美团</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>4.1号美团笔试真题及解析</div>
+      <div>http://example.com/2023/04/07/4-1号美团笔试真题及解析/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>赢尘</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 7, 2023</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>April 7, 2023</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/30/63-%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84-%E2%85%A1/" title="63. 不同路径 Ⅱ">
+                        <span class="hidden-mobile">63. 不同路径 Ⅱ</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
