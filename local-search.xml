@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>96. 不同的二叉搜索树</title>
+    <link href="/2023/06/01/96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
+    <url>/2023/06/01/96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接">[链接🚀]</h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/96.png" alt="96" /><figcaption aria-hidden="true">96</figcaption></figure><h3 id="题解">题解</h3><p>这里主要解释一下递推公式，dp[i-j] 主要是正反遍历的每一个元素，而dp[j- 1]表达的是因为个数是从0开始的。 ### 代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.leetcode.cy.week;<br><br><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DBinarySearchTrees</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">/*× 需求分析：</span><br><span class="hljs-comment">        * 寻找不同的二叉搜索数</span><br><span class="hljs-comment">        * */</span><br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">cin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        System.out.println(DBinarySearchTreesAC(cin.nextInt()));<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">DBinarySearchTreesAC</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= i; j++) &#123;<br>                dp[i] += dp[j - <span class="hljs-number">1</span>]*dp[i - j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>动态规划</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>343.整数拆分</title>
     <link href="/2023/04/12/343-%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/"/>
     <url>/2023/04/12/343-%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/</url>
