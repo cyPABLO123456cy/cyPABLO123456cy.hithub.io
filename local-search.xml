@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>161.分割等和子集</title>
+    <link href="/2023/07/26/161-%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/"/>
+    <url>/2023/07/26/161-%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="链接"><a href="">链接🚀</a></h2><h3 id="题目">题目</h3><figure><img src="../img/md/leetcode/161.png" alt="161" /><figcaption aria-hidden="true">161</figcaption></figure><h3 id="题解">题解</h3><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canPartition</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        * 边界条件</span><br><span class="hljs-comment">        * */</span><br>        <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">null</span> || nums.length == <span class="hljs-number">0</span>) &#123;<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;&#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br><br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        * 求和</span><br><span class="hljs-comment">        * */</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums) &#123;<br>            sum += num;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (sum % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>) &#123;<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;&#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">target</span> <span class="hljs-operator">=</span> sum / <span class="hljs-number">2</span>;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[target+<span class="hljs-number">1</span>];<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        * 外层循环遍历物品</span><br><span class="hljs-comment">        * */</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-comment">/*</span><br><span class="hljs-comment">            * 内层循环遍历背包</span><br><span class="hljs-comment">            * */</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> target; j &gt;= nums[i]; j--) &#123;<br>                dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i]);<br>            &#125;<br>            <span class="hljs-keyword">if</span> (dp[target] == target) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[target] == target;<br>    &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+      <category>动态规划</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>96. 不同的二叉搜索树</title>
     <link href="/2023/06/01/96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     <url>/2023/06/01/96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
